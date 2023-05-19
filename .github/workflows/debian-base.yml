@@ -11,6 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: 'Get Current tag'
+        id: currenttag
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        with:
+          fallback: 0.1.0
+
       - name: Log in to the Container registry
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
@@ -31,4 +37,4 @@ jobs:
           file: base/Dockerfile.debian
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/jumppad-labs/base:debian-${{ github.ref_name }}
+          tags: ghcr.io/jumppad-labs/base:debian-${{ steps.currenttag.outputs.tag }}
