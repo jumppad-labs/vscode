@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
           context: vscode
-          file: Dockerfile.vscode
+          file: vscode/Dockerfile.vscode
           platforms: linux/amd64,linux/arm64
           push: true
           tags: jumppad-labs/vscode:base-${{ github.ref_name }}
