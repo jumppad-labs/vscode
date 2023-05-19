@@ -1,4 +1,4 @@
-FROM ghcr.io/jumppad-labs/base:debian-0.1.0
+FROM ghcr.io/jumppad-labs/base:debian-v0.1.0
 
 ARG TARGETARCH
 
