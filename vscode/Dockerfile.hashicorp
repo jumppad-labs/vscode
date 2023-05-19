@@ -1,0 +1,10 @@
+FROM ghcr.io/jumppad-labs/vscode:base-v0.1.0
+
+# Add HashiCorp repository
+RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - && \
+  apt-add-repository -y "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
+RUN apt update && apt install -y boundary consul nomad packer terraform vault
+
+RUN code-server serve-local --accept-server-license-terms --install-extension hashicorp.hcl
+RUN code-server serve-local --accept-server-license-terms --install-extension hashicorp.terraform

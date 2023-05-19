@@ -1,0 +1,21 @@
+{
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Dark",
+  "explorer.confirmDragAndDrop": false,
+  "editor.minimap.enabled": false,
+  "vsonline.accountProvider": "Microsoft",
+  "codespaces.accountProvider": "Microsoft",
+  "editor.scrollBeyondLastLine": false,
+  "liveshare.authenticationProvider": "GitHub",
+  "editor.tabSize": 4,
+  "terminal.integrated.fontFamily": "Hack",
+  "workbench.editorAssociations": {
+  },
+  "terminal.explorerKind": "external",
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "terminal.integrated.tabs.enabled": false,
+  "git.ignoreRebaseWarning": true,
+  "editor.accessibilitySupport": "off"
+}
