@@ -31,4 +31,4 @@ jobs:
           file: base/Dockerfile.debian
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/jumppad-labs/vscode:${{ github.ref_name }}-debian
+          tags: ghcr.io/jumppad-labs/base:debian-${{ github.ref_name }}
