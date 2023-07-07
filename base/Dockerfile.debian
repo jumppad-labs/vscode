@@ -16,13 +16,13 @@ RUN echo \
 RUN apt-get update && apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Install jumppad validate
-RUN curl -L -o validate.zip https://github.com/jumppad-labs/validate/releases/download/v0.1.0/validate-linux-amd64.zip && \
+RUN curl -L -o validate.zip https://github.com/jumppad-labs/validate/releases/download/v0.1.0/validate-linux-${TARGETARCH}.zip && \
   unzip validate.zip && \
-  mv validate-linux-amd64 /usr/bin/validate && \
+  mv validate-linux-${TARGETARCH} /usr/bin/validate && \
   rm validate.zip
 
 # Install jumppad bounce
-RUN curl -L -o bounce.zip https://github.com/jumppad-labs/bounce/releases/download/v0.1.0/bounce-linux-amd64.zip && \
+RUN curl -L -o bounce.zip https://github.com/jumppad-labs/bounce/releases/download/v0.1.0/bounce-linux-${TARGETARCH}.zip && \
   unzip bounce.zip && \
-  mv bounce-linux-amd64 /usr/bin/bounce && \
+  mv bounce-linux-${TARGETARCH} /usr/bin/bounce && \
   rm bounce.zip
