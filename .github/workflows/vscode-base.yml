@@ -36,4 +36,4 @@ jobs:
           file: vscode/Dockerfile.vscode
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/jumppad-labs/vscode:base-v${{ steps.version.outputs.VERSION }}
+          tags: ghcr.io/jumppad-labs/vscode:base-${{ steps.version.outputs.VERSION }}
