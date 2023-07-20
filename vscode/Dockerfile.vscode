@@ -13,7 +13,7 @@ ARG TARGETARCH
 # Install coder/code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
-ARG EXTENSIONS="jumppad.workspace-config@0.3.0"
+ARG EXTENSIONS="jumppad.workspace-config@0.3.1"
 ENV EXTENSIONS=${EXTENSIONS}
 
 COPY files/install_dependencies.sh /install_dependencies.sh
