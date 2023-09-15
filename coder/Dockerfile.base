@@ -1,0 +1,24 @@
+FROM envoyproxy/envoy:v1.20.1 as envoy
+
+FROM codercom/code-server:4.16.1-debian
+
+ARG TARGETARCH
+
+RUN sudo apt update && sudo apt install -y \
+  curl wget zip git jq build-essential software-properties-common fonts-hack-ttf
+
+  # Install jumppad validate
+RUN curl -L -o validate.zip https://github.com/jumppad-labs/validate/releases/download/v0.1.0/validate-linux-${TARGETARCH}.zip && \
+  unzip validate.zip && \
+  sudo mv validate-linux-${TARGETARCH} /usr/bin/validate && \
+  rm validate.zip
+
+# Install jumppad bounce
+RUN curl -L -o bounce.zip https://github.com/jumppad-labs/bounce/releases/download/v0.1.0/bounce-linux-${TARGETARCH}.zip && \
+  unzip bounce.zip && \
+  sudo mv bounce-linux-${TARGETARCH} /usr/bin/bounce && \
+  rm bounce.zip
+
+COPY config/config.yaml /home/coder/.config/code-server/config.yaml
+
+COPY entrypoint.d/* ${ENTRYPOINTD}/

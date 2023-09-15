@@ -2,14 +2,6 @@ FROM ghcr.io/jumppad-labs/base:debian-v0.1.0
 
 ARG TARGETARCH
 
-#Install nodejs
-# RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
-#   apt install -y nodejs
-
-# Install code server
-# RUN curl -L https://aka.ms/install-vscode-server/setup.sh | sh
-# RUN code-server serve-local --accept-server-license-terms --install-extension shipyard.shipyard
-
 # Install coder/code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
