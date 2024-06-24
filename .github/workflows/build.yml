@@ -15,12 +15,12 @@ jobs:
       matrix:
         image: [vscode]
         include:
-          - image: vscode
-            directory: vscode
-            dockerfile: Dockerfile.vscode
           - image: base
             directory: base
             dockerfile: Dockerfile.debian
+          - image: vscode
+            directory: vscode
+            dockerfile: Dockerfile.vscode
     steps:
       - uses: actions/checkout@v3
         with:
@@ -66,4 +66,4 @@ jobs:
           file: ${{ matrix.directory }}/${{ matrix.dockerfile }}
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/jumppad-labs/vscode:base-${{ steps.version.outputs.VERSION }}
+          tags: ghcr.io/jumppad-labs/vscode:${{ matrix.image }}-${{ steps.version.outputs.VERSION }}
